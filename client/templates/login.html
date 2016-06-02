@@ -1,15 +1,40 @@
-<ion-view title="Your phone number">
-  <ion-nav-buttons side="right">
-    <button ng-click="logger.login()" ng-disabled="!logger.phone || logger.phone.length === 0" class="button button-clear button-positive">Done</button>
-  </ion-nav-buttons>
-  <ion-content class="login">
-    <div class="text-center instructions">
-      Please confirm your country code and enter your phone number
-    </div>
-    <div class="list">
-      <label class="item item-input">
-        <input ng-model="logger.phone" on-return="logger.login()" type="text" placeholder="Your phone number">
-      </label>
-    </div>
-  </ion-content>
+<ion-view title="Signin">
+    <ion-nav-buttons side="right">
+        <button ng-click="logger.login()"
+                ng-disabled="!logger.username||!logger.password ||logger.username.length <= 8||logger.username.password === 0"
+                class="button button-clear button-positive">Done
+        </button>
+    </ion-nav-buttons>
+    <!--<ion-nav-buttons side="left">-->
+        <!--<button class="button button-clear button-positive">Test</button>-->
+    <!--</ion-nav-buttons>-->
+    <ion-content class="login">
+        <div class="" ng-click="logger.test()">
+            Click to test<br>
+        </div>
+        <br>
+        <div class="de1">
+            <div ng-show="currentUser">You are user {{currentUser.username}}
+                with id {{currentUser._id}}
+
+            </div>
+            <div ng-show="!currentUser">You are not user</div>
+
+        </div>
+        <div class="text-center instructions">
+            Create an account
+        </div>
+        <div class="list">
+            <!--<label class="item item-input">-->
+            <!--<input ng-model="logger.phone" on-return="logger.login()" type="text" placeholder="phone">-->
+            <!--</label>-->
+            <label class="item item-input username">
+                <input ng-model="logger.username" on-return="logger.login()" type="text" placeholder="username"
+                       autofocus>
+            </label>
+            <label class="item item-input">
+                <input ng-model="logger.password" on-return="logger.login()" type="text" placeholder="password">
+            </label>
+        </div>
+    </ion-content>
 </ion-view>

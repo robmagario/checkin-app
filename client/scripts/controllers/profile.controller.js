@@ -5,9 +5,12 @@ import { Controller } from 'angular-ecmascript/module-helpers';
 export default class ProfileCtrl extends Controller {
   constructor() {
     super(...arguments);
+      this.name=this.currentUser.username;
+/*
 
-    const profile = this.currentUser && this.currentUser.profile;
-    this.name = profile ? profile.name : '';
+ */
+    //const profile = this.currentUser && this.currentUser.profile;
+    //this.name = profile ? profile.name : '';
   }
 
   updatePicture () {

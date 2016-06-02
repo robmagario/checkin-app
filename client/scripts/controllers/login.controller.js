@@ -3,7 +3,50 @@ import { Accounts } from 'meteor/accounts-base';
 import { Controller } from 'angular-ecmascript/module-helpers';
 
 export default class LoginCtrl extends Controller {
+    constructor() {
+        super(...arguments);
+        //init
+        this.username='John';
+        test2=function(){
+            console.log(Meteor.user());
+        }
+    }
+
+    //Meteor.loginWithPassword('john','aaaaaaaa')
+    //Meteor.loginWithPassword(user, password, [callback])
+    //Meteor.logout()
+    test(){
+        this.$state.go('tab.chats');
+        return
+        //console.log(this);
+        //this.$ionicPopup.alert({
+        //    title: 'Error',
+        //    template: 'abc'
+        //});
+    }
   login() {
+      let ctrl=this
+      Accounts.createUser({
+          username:this.username,
+          password:this.password
+      }, function(err){
+          if(!err){
+                ctrl.$state.go('tab.chats');
+              ctrl.$ionicPopup.alert({
+                  title: 'Account created',
+                  template: '<div>Username:'+ctrl.username+'</div>',
+                  cssClass: 'text-center'
+              });
+          }else{
+              ctrl.$ionicPopup.alert({
+                  title: 'Error',
+                  template: err.reason,
+                  cssClass: 'text-center'
+              });
+              console.log(err);
+          }
+      });
+      return
     if (_.isEmpty(this.phone)) return;
 
     const confirmPopup = this.$ionicPopup.confirm({

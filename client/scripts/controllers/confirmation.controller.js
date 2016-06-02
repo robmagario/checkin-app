@@ -10,12 +10,12 @@ export default class ConfirmationCtrl extends Controller {
   }
 
   confirm() {
-    if (_.isEmpty(this.code)) return;
-
-    Accounts.verifyPhone(this.phone, this.code, (err) => {
-      if (err) return this.handleError(err);
-      this.$state.go('profile');
-    });
+    //if (_.isEmpty(this.code)) return;
+    //
+    //Accounts.verifyPhone(this.phone, this.code, (err) => {
+    //  if (err) return this.handleError(err);
+    //  this.$state.go('profile');
+    //});
   }
 
   handleError(err) {

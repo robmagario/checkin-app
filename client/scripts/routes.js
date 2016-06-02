@@ -22,6 +22,15 @@ class RoutesConfig extends Config {
           }
         }
       })
+        //.state('tab.chats', {
+        //    url: '/chats',
+        //    views: {
+        //        'tab-chats': {
+        //            templateUrl: 'client/templates/testt.html',
+        //            controller: 'TesttCtrl as chats'
+        //        }
+        //    }
+        //})
       .state('tab.chats', {
         url: '/chats',
         views: {
@@ -45,6 +54,15 @@ class RoutesConfig extends Config {
         templateUrl: 'client/templates/login.html',
         controller: 'LoginCtrl as logger'
       })
+      //.state('tab.testt', {
+      //  url: '/testt',
+      //      views: {
+      //          'tab-chats': {
+      //              templateUrl: 'client/templates/testt.html',
+      //              controller: 'TesttCtrl as testt'
+      //          }
+      //      }
+      //})
       .state('confirmation', {
         url: '/confirmation/:phone',
         templateUrl: 'client/templates/confirmation.html',

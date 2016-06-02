@@ -4,7 +4,7 @@ import { Chats } from '../../../lib/collections';
 export default class ChatsCtrl extends Controller {
   constructor() {
     super(...arguments);
-
+      console.log('chats');
     this.helpers({
       data() {
         return Chats.find();
